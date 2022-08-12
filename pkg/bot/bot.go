@@ -2,6 +2,7 @@ package bot
 
 import (
 	"fmt"
+	"math/rand"
 
 	"github.com/ahmed-deftoner/discord-bot/pkg/config"
 	"github.com/bwmarrin/discordgo"
@@ -9,6 +10,17 @@ import (
 
 var BotID string
 var goBot *discordgo.Session
+var msgs = []string{"uwu", "oni chan", "fuck me, baby", "cum inside me", "ara ara"}
+
+func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
+	if m.Author.ID == BotID {
+		return
+	}
+
+	if m.Content == "h" {
+		_, _ = s.ChannelMessageSend(m.ChannelID, msgs[rand.Intn(5)])
+	}
+}
 
 func Start() {
 	goBot, err := discordgo.New("Bot" + config.Token)
