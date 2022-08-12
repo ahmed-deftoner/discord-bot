@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/ahmed-deftoner/discord-bot/pkg/bot"
+	"github.com/ahmed-deftoner/discord-bot/pkg/config"
+)
 
 func main() {
 	err := config.ReadConfig()
