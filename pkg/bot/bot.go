@@ -17,13 +17,13 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		return
 	}
 
-	if m.Content == "h" {
+	if m.Content != "" {
 		_, _ = s.ChannelMessageSend(m.ChannelID, msgs[rand.Intn(5)])
 	}
 }
 
 func Start() {
-	goBot, err := discordgo.New("Bot" + config.Token)
+	goBot, err := discordgo.New("Bot " + config.Token)
 	if err != nil {
 		fmt.Println(err.Error())
 		return

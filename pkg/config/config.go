@@ -20,7 +20,7 @@ var (
 func ReadConfig() error {
 	fmt.Println("reading config file ...")
 
-	file, err := ioutil.ReadFile("../config.json")
+	file, err := ioutil.ReadFile("././config.json")
 	if err != nil {
 		fmt.Println(err.Error())
 		return err
@@ -28,7 +28,7 @@ func ReadConfig() error {
 
 	fmt.Println(string(file))
 
-	err = json.Unmarshal(file, Config)
+	err = json.Unmarshal(file, &Config)
 	if err != nil {
 		fmt.Println(err.Error())
 		return err
