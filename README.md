@@ -1,2 +1,2 @@
 # discord-bot
- my waifu bot that replies to my horny messages
+ my waifu bot that replies to my messages
